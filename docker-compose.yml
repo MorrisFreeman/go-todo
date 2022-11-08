@@ -1,0 +1,11 @@
+version: "3.9"
+services:
+  app:
+    image: go-todo
+    build:
+      args:
+        - target=dev
+    volumes:
+      - .:/app
+    ports:
+      - "18000:80"
