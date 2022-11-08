@@ -10,7 +10,7 @@ build-local: ## Build docker image to local development
 	docker dompose build --no-cache
 
 up: ## Do docker compose up with hot reload
-	docker compose up -deploy
+	docker compose up -d
 
 down: ## Do docker compose down
 	docker compose down
