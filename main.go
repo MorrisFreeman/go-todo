@@ -7,12 +7,16 @@ import (
 	"net"
 	"net/http"
 	"os"
+	"os/signal"
+	"syscall"
 
 	"github.com/MorrisFreeman/go-todo/config"
 	"golang.org/x/sync/errgroup"
 )
 
 func run(ctx context.Context) error {
+	ctx, stop := signal.NotifyContext(ctx, os.Interrupt, syscall.SIGTERM)
+	defer stop()
 	cfg, err := config.New()
 	if err != nil {
 		return err

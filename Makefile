@@ -3,8 +3,8 @@
 
 DOCKER_TAG := latest
 build: ## Build docker image to deploy
-	docker build -t MorrisFreeman/go-todo:${DOCKER_TAG} \
-		-- target deploy ./
+	docker build -t morrisfreeman/go-todo:${DOCKER_TAG} \
+		--target deploy ./
 
 build-local: ## Build docker image to local development
 	docker dompose build --no-cache
