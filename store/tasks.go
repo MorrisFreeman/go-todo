@@ -6,7 +6,7 @@ import (
 	"github.com/MorrisFreeman/go-todo/entity"
 )
 
-func (r *Reposytory) ListTask(ctx context.Context, db Queryer) (entity.Tasks, error) {
+func (r *Reposytory) ListTasks(ctx context.Context, db Queryer) (entity.Tasks, error) {
 	tasks := entity.Tasks{}
 	sql := `SELECT
 				id, title, status, created, modified
