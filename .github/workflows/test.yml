@@ -13,7 +13,7 @@ jobs:
         options: >-
           --health-cmd "mysqladmin ping -h localhost"
           --health-interval 20s
-          --health0timeout 10s
+          --health-timeout 10s
           --health-retries 10
         ports:
           - 3306:3306
