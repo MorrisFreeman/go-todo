@@ -11,6 +11,12 @@ require (
 )
 
 require (
+	github.com/matryer/moq v0.2.7 // indirect
+	golang.org/x/mod v0.7.0 // indirect
+	golang.org/x/tools v0.3.0 // indirect
+)
+
+require (
 	github.com/go-playground/locales v0.14.0 // indirect
 	github.com/go-playground/universal-translator v0.18.0 // indirect
 	github.com/go-sql-driver/mysql v1.6.0
