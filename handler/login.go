@@ -25,11 +25,20 @@ func (l *Login) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	err := l.Validator.Struct(body)
+	if err != nil {
+		RespondJson(ctx, w, &ErrResponse{
+			Message: err.Error(),
+		}, http.StatusBadRequest)
+		return
+	}
+
 	jwt, err := l.Service.Login(ctx, body.UserName, body.Password)
 	if err != nil {
 		RespondJson(ctx, w, &ErrResponse{
 			Message: err.Error(),
 		}, http.StatusInternalServerError)
+		return
 	}
 
 	rsp := struct {
@@ -38,5 +47,5 @@ func (l *Login) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		AccessToken: jwt,
 	}
 
-	RespondJson(r.Context(), w, rsp, http.StatusOK)
+	RespondJson(ctx, w, rsp, http.StatusOK)
 }
