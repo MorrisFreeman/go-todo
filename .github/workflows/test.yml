@@ -44,11 +44,12 @@ jobs:
         env:
           JWT_SECRET_KEY: ${{ secrets.JWT_SECRET_KEY }}
         run: echo -n $JWT_SECRET_KEY | base64 --decode > ahth/cert/secret.pem
-      
+
       - name: Test
         run: |
           go install github.com/k0kubun/sqldef/cmd/mysqldef@latest
           mysqldef -u todo -p todo -h 127.0.0.1 -P 3306 todo < ./_tools/mysql/schema.sql
         run: go test ./... -coverprofile=coverage.out
-        name: report coverage
-          uses: k1LoW/octocov-action@v0
+
+      - name: report coverage
+        uses: k1LoW/octocov-action@v0
