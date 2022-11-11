@@ -42,8 +42,8 @@ jobs:
 
       - name: Create secret.pem
         env:
-          JWT_SECRET_KEY: ${{ secrets.JWT_SECRET_KEY }}
-        run: echo -n $JWT_SECRET_KEY | base64 --decode > auth/cert/secret.pem
+          JWT_SECRET_KEY: ${{ secrets.JWT_PRIVATE_KEY }}
+        run: echo -n $JWT_PRIVATE_KEY | base64 --decode > auth/cert/secret.pem
 
       - name: Install sqldef
         run: |
