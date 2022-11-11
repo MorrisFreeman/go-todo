@@ -15,3 +15,5 @@
 # vendor/
 
 tmp/
+
+auth/cert/secret.pem
