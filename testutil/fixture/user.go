@@ -21,6 +21,9 @@ func User(u *entity.User) *entity.User {
 	if u == nil {
 		return result
 	}
+	if u.ID != 0 {
+		result.ID = u.ID
+	}
 	if u.Name != "" {
 		result.Name = u.Name
 	}

@@ -9,7 +9,7 @@ import (
 	"github.com/MorrisFreeman/go-todo/clock"
 	"github.com/MorrisFreeman/go-todo/entity"
 	"github.com/google/uuid"
-	"github.com/lestrrat-go/jwx/jwa"
+	"github.com/lestrrat-go/jwx/v2/jwa"
 	"github.com/lestrrat-go/jwx/v2/jwk"
 	"github.com/lestrrat-go/jwx/v2/jwt"
 )
